@@ -41,6 +41,12 @@ const persons = [
       const deadMan = persons.findIndex((x) => x.id === deadPersonId);
       persons[deadMan].isDead = true;
       console.log(randomNum)
-  } 
+  }
+  
+  const bringToLife = (personId) => {
 
-  export default { getAlivePersons, getDeadPersons, randomMurder };
+      const itLives = persons.findIndex((x) => x.id === personId);
+      persons[itLives].isDead = false;
+  }
+
+  export default { getAlivePersons, getDeadPersons, randomMurder, bringToLife };
