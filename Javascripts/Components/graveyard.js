@@ -1,10 +1,20 @@
-import util from "./helpers/utils";
-import utils from "./helpers/utils";
+import util from "../helpers/utils.js"
+import personData from '../helpers/data/personData.js';
 
 const buildGraveyard = () => {
-    let domstring = ' <h2 class="col-12 text-center">Graveyard</h2>';
-    domstring
-    utils.printToDom('graveyard', domString);
+  const persons = personData.getDeadPersons();
+  let domString = '<h2 class="col-12 text-center">Graveyard</h2>';
+  domString += '<div class="d-flex flex-wrap">';
+  persons.forEach((person) => {
+    domString += '<div class="col-4 person-card">';
+    domString += '<div class="card">';
+    domString += '<div class="card-body">';
+    domString += `<h5 class="card-title">${person.name}</h5>`;
+    domString += '</div>';
+    domString += '</div>';
+    domString += '</div>';
+  });
+  domString += '</div>';
+  util.printToDom('graveyard', domString);
 }
-
 export default { buildGraveyard };

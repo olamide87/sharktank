@@ -27,11 +27,11 @@ const persons = [
   ];
 
   const getAlivePersons = () => {
-      return persons.
+    return persons.filter((x) => x.isDead === true);
   }
 
-  const getAlivePersons = () => {
+  const getDeadPersons = () => {
       return persons.filter((x) => x.isDead === false);
   };
 
-  export default { getAlivePersons };
+  export default { getAlivePersons, getDeadPersons };

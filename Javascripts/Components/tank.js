@@ -1,22 +1,20 @@
-import utls from './helpers/utils.js/index.js.js';
+import util from '../helpers/utils.js';
+import personData from '../helpers/data/personData.js'
 
 
-const takBuilder = () => {
-    const persons = personData.getAlivePersons();
-    let domString = '';
-     domString += '<div class="card">'; 
-     domString += '<div class="card-header">Sharktank</div>'
-     domString += '<ul class="list-group list-group-flush">'
-
-     persons.forEach((person) => {
-         domstring += `<li class="list-group-item">${person.name}</li>`;
-     });
-
-    
-    domString += </ul>
-    domString += </div>
-    
+const tankBuilder = () => {
+  const persons = personData.getAlivePersons();
+  let domstring = '';
+  domstring += '<div class="card">'
+  domstring += '<div class="card-header">Feature</div>'
+  domstring += '<ul class="list-group list-group-flush">'
+  domstring += '<li class="list-group-item">Cras justo odio</li>'
+  domstring += '<li class="list-group-item">Dapibus ac facilisis in</li>'
+  persons.forEach((person) => {
+  domstring += `<li class="list-group-item">${person.name}</li>`
+  });
+  domstring += '</ul>'
+  domstring += '</div>'
+  util.printToDom('tank', domstring)
 };
-
 export default { tankBuilder }
-
